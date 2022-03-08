@@ -13,13 +13,22 @@
 
 <title> Output</title>
 
-<script src="site_libs/header-attrs-2.6/header-attrs.js"></script>
-<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<script src="site_libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
@@ -36,11 +45,6 @@
     </style>
 
 <style type="text/css">code{white-space: pre;}</style>
-<style type="text/css">
-  pre:not([class]) {
-    background-color: white;
-  }
-</style>
 <script type="text/javascript">
 if (window.hljs) {
   hljs.configure({languages: []});
@@ -53,32 +57,6 @@ if (window.hljs) {
 
 
 
-<style type="text/css">
-h1 {
-  font-size: 34px;
-}
-h1.title {
-  font-size: 38px;
-}
-h2 {
-  font-size: 30px;
-}
-h3 {
-  font-size: 24px;
-}
-h4 {
-  font-size: 18px;
-}
-h5 {
-  font-size: 16px;
-}
-h6 {
-  font-size: 12px;
-}
-.table th:not([align]) {
-  text-align: left;
-}
-</style>
 
 
 <link rel="stylesheet" href="styles.css" type="text/css" />
@@ -90,10 +68,6 @@ h6 {
   max-width: 940px;
   margin-left: auto;
   margin-right: auto;
-}
-code {
-  color: inherit;
-  background-color: rgba(0, 0, 0, 0.04);
 }
 img {
   max-width:100%;
@@ -110,40 +84,13 @@ button.code-folding-btn:focus {
 summary {
   display: list-item;
 }
+pre code {
+  padding: 0;
+}
 </style>
 
 
 <style type="text/css">
-/* padding for bootstrap navbar */
-body {
-  padding-top: 51px;
-  padding-bottom: 40px;
-}
-/* offset scroll position for anchor links (for fixed navbar)  */
-.section h1 {
-  padding-top: 56px;
-  margin-top: -56px;
-}
-.section h2 {
-  padding-top: 56px;
-  margin-top: -56px;
-}
-.section h3 {
-  padding-top: 56px;
-  margin-top: -56px;
-}
-.section h4 {
-  padding-top: 56px;
-  margin-top: -56px;
-}
-.section h5 {
-  padding-top: 56px;
-  margin-top: -56px;
-}
-.section h6 {
-  padding-top: 56px;
-  margin-top: -56px;
-}
 .dropdown-submenu {
   position: relative;
 }
@@ -171,7 +118,7 @@ body {
   margin-right: -10px;
 }
 .dropdown-submenu:hover>a:after {
-  border-left-color: #ffffff;
+  border-left-color: #adb5bd;
 }
 .dropdown-submenu.pull-left {
   float: none;
@@ -183,7 +130,7 @@ body {
 }
 </style>
 
-<script>
+<script type="text/javascript">
 // manage active state of menu based on current page
 $(document).ready(function () {
   // active menu anchor
@@ -194,10 +141,23 @@ $(document).ready(function () {
   var menuAnchor = $('a[href="' + href + '"]');
 
   // mark it active
-  menuAnchor.parent().addClass('active');
+  menuAnchor.tab('show');
 
   // if it's got a parent navbar menu mark it active as well
   menuAnchor.closest('li.dropdown').addClass('active');
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
 });
 </script>
 
@@ -209,7 +169,6 @@ $(document).ready(function () {
   max-height: 500px;
   min-height: 44px;
   overflow-y: auto;
-  background: white;
   border: 1px solid #ddd;
   border-radius: 4px;
 }
@@ -313,13 +272,13 @@ $(document).ready(function () {
 </li>
 <li>
   <a href="https://scholar.google.com/citations?user=QAXoQysAAAAJ">
-    <span class="fas fa-graduation-cap"></span>
+    <span class="fa fa-graduation-cap"></span>
      
   </a>
 </li>
 <li>
   <a href="mailto:marijn.keijzer@iast.fr">
-    <span class="fas fa-envelope-square"></span>
+    <span class="fa fa-envelope-square"></span>
      
   </a>
 </li>
@@ -328,7 +287,7 @@ $(document).ready(function () {
   </div><!--/.container -->
 </div><!--/.navbar -->
 
-<div class="fluid-row" id="header">
+<div id="header">
 
 
 
@@ -339,29 +298,31 @@ $(document).ready(function () {
 
 <p><br></p>
 <div id="publications-in-peer-reviewed-journals" class="section level3">
-<h3>Publications in peer reviewed journals</h3>
-<p><strong>Keijzer</strong> &amp; Mäs. (in press). <a href="">The complex link between filter bubbles and opinion polarization</a>. <em>Data Science</em></p>
+<h3><strong>Publications in peer reviewed journals</strong></h3>
+<p><strong>Keijzer</strong> &amp; Mäs. (2022). <a href="https://doi.org/10.3233/DS-220054">The complex link between filter bubbles and opinion polarization</a>. <em>Data Science</em></p>
 <p><strong>Keijzer</strong> &amp; Mepham. (2021). <a href="https://doi.org/10.5117/MEM2021.2.003.KEIJ">Een Pandemie van Polarisatie?</a> [A Polarization Pandemic?]. <em>Mens &amp; Maatschappij, 96</em>(2): 179-211</p>
 <p><strong>Keijzer</strong> &amp; Mäs. (2021). <a href="https://doi.org/10.1016/j.osnem.2020.100106">The Strength of Weak Bots</a>. <em>Online Social Networks and Media</em></p>
 <p><strong>Keijzer</strong>, Mäs &amp; Flache. (2018). <a href="https://doi.org/10.1155/2018/9502872">Communication in Online Social Networks Fosters Cultural Isolation</a>. <em>Complexity</em></p>
 <hr />
 </div>
-<div id="book-chapters" class="section level2">
-<h2>Book Chapters</h2>
-<p>Flache, Mäs &amp; <strong>Keijzer</strong>. (in press). Computational approaches in rigorous sociology: agent-based computational sociology and computational social science. In K. Gërxhani, N. D. De Graaf, &amp; W. Raub (Eds.), <em>Handbook of Sociological Science. Contributions to Rigorous Sociology</em>, Cheltenham: Edward Elgar.</p>
+<div id="book-chapters" class="section level3">
+<h3><strong>Book Chapters</strong></h3>
+<p>Flache, Mäs &amp; <strong>Keijzer</strong>. (in press). Computational approaches in rigorous sociology: Agent-based computational sociology and computational social science. In K. Gërxhani, N. D. De Graaf, &amp; W. Raub (Eds.), <em>Handbook of Sociological Science: Contributions to Rigorous Sociology</em>, Cheltenham: Edward Elgar.</p>
 <hr />
+</div>
 <div id="software" class="section level3">
-<h3>Software</h3>
+<h3><strong>Software</strong></h3>
 <p>Laukemper, <strong>Keijzer</strong> &amp; Bakker. (2019). <a href="https://www.github.com/marijnkeijzer/defSim">defSim: the Discrete Event Framework for Social Influence Models</a></p>
 <hr />
 </div>
 <div id="other-publications" class="section level3">
-<h3>Other publications</h3>
+<h3><strong>Other publications</strong></h3>
+<p><strong>Keijzer</strong>. (2022). <a href="https://doi.org/http://11370/0366219d-c016-49ea-9420-40b9f758b434">Opinion Dynamics in Online Social Media</a>. Groningen: <em>ICS-dissertations</em></p>
 <p>De Matos Fernandes &amp; <strong>Keijzer</strong>. (2020). <a href="https://rofasss.org/2020/04/15/no-one-can-predict-the-future/">No one can predict the future: More than a semantic dispute</a>. <em>Review of Artificial Societies and Social Simulation</em></p>
 <hr />
 </div>
 <div id="conference-talks" class="section level3">
-<h3>Conference talks</h3>
+<h3><strong>Conference talks</strong></h3>
 <p>Micro-foundations of polarization in online social media @ Annual Conference for Experimental Sociology 2021 (Ascona, Switzerland)</p>
 <p>Micro-foundations of polarization in online social media: A model In the lab fed back into the model @ ESSA’s SocSimFesT 2021 (online)</p>
 <p><a href="eurocss.html">Validating models of opinion polarization on the micro-level</a> @ European Symposium Series on Societal Challenges in Computational Social Science, 2019: Polarization and Radicalization (Zürich, Switzerland)</p>
@@ -374,22 +335,24 @@ $(document).ready(function () {
 <hr />
 </div>
 <div id="workshops" class="section level3">
-<h3>Workshops</h3>
+<h3><strong>Workshops</strong></h3>
 <p><a href="http://marijnkeijzer.nl/defSim-tutorial/">Social Influence Modeling in Python Using defSim</a> @ European Social Simulation Association’s SocSimFest 2021 (Online). Co-organizers: Dieko Bakker &amp; Anton Laukemper.</p>
 <p><a href="eurocss.html">Validating models of opinion polarization on the micro-level</a> @ European Symposium Series on Societal Challenges in Computational Social Science, 2019: Polarization and Radicalization (Zürich, Switzerland). Co-organizers: Andreas Flache, Michael Mäs &amp; David Garcia.</p>
+<hr />
 </div>
 <div id="media-coverage" class="section level3">
-<h3>Media coverage</h3>
-<iframe width="425" height="240" align="right" frameBorder="0" style="margin: 0px 0px 20px 20px;" src="https://www.youtube.com/embed/erS8wmbyT84">
-</iframe>
+<h3><strong>Media coverage</strong></h3>
+<p>NEMO Kennislink (02/04/2022) <a href="https://www.nemokennislink.nl/publicaties/zorgen-sociale-media-voor-meer-polarisatie/">Zorgen sociale media voor meer polarisatie?</a> (<em>Do social media cause more polarization?</em>)</p>
+<p>Radio 1 (01/19/2022) Interview about my dissertation in <a href="https://www.nporadio1.nl/uitzendingen/nos-radio-1-journaal/90634860-1c90-446f-afec-1a9a2e00f49f/2022-01-19-nos-radio-1-journaal">Radio 1 Journaal</a></p>
 <p>PNAS News Feature (09/14/2021) <a href="https://doi.org/10.1073/pnas.2114484118">Modeling the power of polarization</a></p>
 <p>Radio 2 (09/26/2020) <a href="https://www.nporadio2.nl/shay/gemist/video/19624/2020-09-26-zorgt-social-media-voor-meer-polarisatie">Zorgt social media voor meer polarisatie?</a> (<em>Do social media cause more polarization?</em>)</p>
+<iframe width="425" height="240" align="right" frameBorder="0" style="margin: 0px 0px 20px 20px;" src="https://www.youtube.com/embed/erS8wmbyT84">
+</iframe>
 <p>SciencePOD (07/05/2019) <a href="https://about.hindawi.com/blog/how-online-communication-may-increase-cultural-isolation/">The (anti)social network – How online communication may increase cultural isolation</a></p>
 <p>NOS (03/28/2019) ‘<a href="https://nos.nl/artikel/2278007-strengere-regels-facebook-tegen-extreem-rechts-toegejuicht-maar-ook-twijfel.html">Strengere regels Facebook tegen extreem-rechts toegejuicht, maar ook twijfel</a>’ (<em>Facebook’s stricter rules against the far right welcomed, but there are also doubts</em>)</p>
 <p>Reformatorisch Dagblad (02/16/2019) ‘<a href="https://www.rd.nl/vandaag/binnenland/besef-dat-youtube-je-naar-het-extreme-kan-leiden-1.1547896">,,Besef dat YouTube je naar het extreme kan leiden’’</a>’ (<em>Realize that YouTube can lead you to the extreme</em>)</p>
 <p>Short documentary ‘<a href="https://youtu.be/erS8wmbyT84">Digitale Kruimels</a>’ (<em>digital breadcrumbs</em>) by Matjeu Witte →</p>
 <p>NOS (12/23/2016) ‘<a href="https://nos.nl/op3/artikel/2149923-zo-bepalen-algoritmes-jouw-wereldbeeld.html">Zo bepalen algoritmes jouw wereldbeeld</a>’ (<em>This is how algorithms determine your world view</em>)</p>
-</div>
 </div>
 
 
@@ -419,7 +382,7 @@ $(document).ready(function () {
 
 $(document).ready(function () {
   $('.tabset-dropdown > .nav-tabs > li').click(function () {
-    $(this).parent().toggleClass('nav-tabs-open')
+    $(this).parent().toggleClass('nav-tabs-open');
   });
 });
 </script>
