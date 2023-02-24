@@ -11,9 +11,9 @@
 
 
 
-<title> News Archive</title>
+<title> Updates archive</title>
 
-<script src="site_libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="site_libs/header-attrs-2.20/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
@@ -59,6 +59,7 @@ if (window.hljs) {
 
 
 
+
 <link rel="stylesheet" href="styles.css" type="text/css" />
 
 
@@ -83,6 +84,9 @@ button.code-folding-btn:focus {
 }
 summary {
   display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
 }
 pre code {
   padding: 0;
@@ -140,11 +144,15 @@ $(document).ready(function () {
     href = "index.html";
   var menuAnchor = $('a[href="' + href + '"]');
 
-  // mark it active
-  menuAnchor.tab('show');
-
-  // if it's got a parent navbar menu mark it active as well
-  menuAnchor.closest('li.dropdown').addClass('active');
+  // mark the anchor link active (and if it's in a dropdown, also mark that active)
+  var dropdown = menuAnchor.closest('li.dropdown');
+  if (window.bootstrap) { // Bootstrap 4+
+    menuAnchor.addClass('active');
+    dropdown.find('> .dropdown-toggle').addClass('active');
+  } else { // Bootstrap 3
+    menuAnchor.parent().addClass('active');
+    dropdown.addClass('active');
+  }
 
   // Navbar adjustments
   var navHeight = $(".navbar").first().height() + 15;
@@ -173,8 +181,8 @@ $(document).ready(function () {
   border-radius: 4px;
 }
 
-.tabset-dropdown > .nav-tabs > li.active:before {
-  content: "";
+.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "\e259";
   font-family: 'Glyphicons Halflings';
   display: inline-block;
   padding: 10px;
@@ -182,16 +190,9 @@ $(document).ready(function () {
 }
 
 .tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
-  content: "&#xe258;";
-  border: none;
-}
-
-.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
-  content: "";
+  content: "\e258";
   font-family: 'Glyphicons Halflings';
-  display: inline-block;
-  padding: 10px;
-  border-right: 1px solid #ddd;
+  border: none;
 }
 
 .tabset-dropdown > .nav-tabs > li.active {
@@ -235,7 +236,7 @@ $(document).ready(function () {
 <div class="navbar navbar-default  navbar-fixed-top" role="navigation">
   <div class="container">
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
@@ -288,12 +289,26 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore"><br>News Archive</h1>
+<h1 class="title toc-ignore"><br>Updates archive</h1>
 
 </div>
 
 
 <p><br></p>
+<p style="border:1px; border-style:solid; border-color:#e1e1e1; padding:1em;">
+<a href="https://doi.org/10.3233/DS-220054"><img src="img/ds-bubbles.jpg" style="height:120px;margin: 0px 0px 0px 20px;" align="right"></img></a>
+<strong>March 2022 \\</strong> <a
+href="https://doi.org/10.3233/DS-220054">Do filter bubbles cause
+polarization?</a> In our new paper in the next issue of <em>Data
+Science</em> Michael Mäs and I argue that the answer to this question
+depends on a multitude of factors on the global, local and individual
+level of online social media as complex systems. We provide an extensive
+review of theoretical and emprical work and show with toy models how
+counter-intuitive effects emerge from of seemingly straightforward
+mechanisms. We argue for the use of digital ‘crash-test dummies’ to
+optimize technological innovations for information systems
+pre-implementation.
+</p>
 <p style="border:1px; border-style:solid; border-color:#e1e1e1; padding:1em;">
 <a href="https://www.iast.fr"><img src="img/iast.png" alt="logo" style="height:90px;margin: 0px 20px 10px 0px;" align="left"></img></a>
 <strong>October 2021 \\</strong> I have joined the Institute for Advance

@@ -13,7 +13,7 @@
 
 <title>index.knit</title>
 
-<script src="site_libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="site_libs/header-attrs-2.20/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
@@ -59,6 +59,7 @@ if (window.hljs) {
 
 
 
+
 <link rel="stylesheet" href="styles.css" type="text/css" />
 
 
@@ -83,6 +84,9 @@ button.code-folding-btn:focus {
 }
 summary {
   display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
 }
 pre code {
   padding: 0;
@@ -140,11 +144,15 @@ $(document).ready(function () {
     href = "index.html";
   var menuAnchor = $('a[href="' + href + '"]');
 
-  // mark it active
-  menuAnchor.tab('show');
-
-  // if it's got a parent navbar menu mark it active as well
-  menuAnchor.closest('li.dropdown').addClass('active');
+  // mark the anchor link active (and if it's in a dropdown, also mark that active)
+  var dropdown = menuAnchor.closest('li.dropdown');
+  if (window.bootstrap) { // Bootstrap 4+
+    menuAnchor.addClass('active');
+    dropdown.find('> .dropdown-toggle').addClass('active');
+  } else { // Bootstrap 3
+    menuAnchor.parent().addClass('active');
+    dropdown.addClass('active');
+  }
 
   // Navbar adjustments
   var navHeight = $(".navbar").first().height() + 15;
@@ -173,8 +181,8 @@ $(document).ready(function () {
   border-radius: 4px;
 }
 
-.tabset-dropdown > .nav-tabs > li.active:before {
-  content: "";
+.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "\e259";
   font-family: 'Glyphicons Halflings';
   display: inline-block;
   padding: 10px;
@@ -182,16 +190,9 @@ $(document).ready(function () {
 }
 
 .tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
-  content: "&#xe258;";
-  border: none;
-}
-
-.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
-  content: "";
+  content: "\e258";
   font-family: 'Glyphicons Halflings';
-  display: inline-block;
-  padding: 10px;
-  border-right: 1px solid #ddd;
+  border: none;
 }
 
 .tabset-dropdown > .nav-tabs > li.active {
@@ -235,7 +236,7 @@ $(document).ready(function () {
 <div class="navbar navbar-default  navbar-fixed-top" role="navigation">
   <div class="container">
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
@@ -317,11 +318,35 @@ was a Postdoctoral researcher at the Chair of Sociology and
 Computational Social Science in the <a
 href="https://www.kit.edu">Karslruhe Institute of Technology</a>.</p>
 <p><br></p>
+<p>Let’s get in touch: <a href="mailto:marijn.keijzer@iast.fr"
+class="email">marijn.keijzer@iast.fr</a></p>
+<p><br></p>
 <p><img src="img/line.gif" /></p>
 <p><br></p>
 </div>
 <div id="updates" class="section level3">
 <h3>Updates</h3>
+<p style="border:1px; border-style:solid; border-color:#e1e1e1; padding:1em;">
+<a href="https://doi.org/10.3233/DS-220054"><img src="img/cu-bigsss.png" style="height:120px;margin: 0px 0px 0px 20px;" align="right"></img></a>
+<strong>February 2023 \\</strong> This summer I am organizing two events
+at Constructor University in Bremen (Germany). First up, there will be a
+<a href="https://bigsss.janlo.de/">BIGSSS Summer School in Computational
+Social Science on Modeling Opinion Dynamics and Democratic
+Decisions</a>. The school is also a research incubator, where teams of
+young scholars and experts work together on a research project. Join us
+as an expert (call for experts <a
+href="https://docs.google.com/document/d/11IEaBvr_W44ummS938LKEZf62lpNGTwI8mToHWyEAD4/export?format=pdf">here</a>)
+or participant July 3-12. Calls and all other info on <a
+href="http://janlo.de/bigssscss/">our website</a>. <br> Connecting
+seamlessly, we then organize the second edition of the <a
+href="http://odcd2023.janlo.de/">Interdisciplinary Workshop on Opinion
+Dynamics and Collective Decision</a> on July 12-14. The workshop brings
+together researchers who study theoretical and empirical modeling of
+opinion dynamics. More information can be found on the <a
+href="http://odcd2023.janlo.de/">workshop website</a>. Both events are
+co-organized with Jan Lorenz and Bruce Edmonds. Hope to see you in
+Bremen!
+</p>
 <p style="border:1px; border-style:solid; border-color:#e1e1e1; padding:1em;">
 <a href="https://doi.org/10.1177/10434631221131771"><img src="img/trustgame.jpeg" alt="trust game" style="height:130px;margin: 0px 20px 10px 0px;" align="left"></img></a>
 <strong>December 2022 \\</strong> A high socioeconomic status converts
@@ -341,20 +366,6 @@ reputation, and interpersonal trust in peer-to-peer markets: Evidence
 from an online experiment</a> is published, open access, in Rationality
 &amp; Society—A journal founded by… James Coleman
 </p>
-<p style="border:1px; border-style:solid; border-color:#e1e1e1; padding:1em;">
-<a href="https://doi.org/10.3233/DS-220054"><img src="img/ds-bubbles.jpg" style="height:120px;margin: 0px 0px 0px 20px;" align="right"></img></a>
-<strong>March 2022 \\</strong> <a
-href="https://doi.org/10.3233/DS-220054">Do filter bubbles cause
-polarization?</a> In our new paper in the next issue of <em>Data
-Science</em> Michael Mäs and I argue that the answer to this question
-depends on a multitude of factors on the global, local and individual
-level of online social media as complex systems. We provide an extensive
-review of theoretical and emprical work and show with toy models how
-counter-intuitive effects emerge from of seemingly straightforward
-mechanisms. We argue for the use of digital ‘crash-test dummies’ to
-optimize technological innovations for information systems
-pre-implementation.
-</p>
 <p align="right">
 <a href="newsarchive.html">See more &gt;&gt;</a>
 </p>
@@ -364,8 +375,9 @@ $(function() {
     var pageTitle = $("title").text("Marijn Keijzer");
     });
 </script>
+<hr />
 <p align="right">
-<small><i>Website was last updated on January 09, 2023</i></small>
+<small><i>Website was last updated on February 24, 2023</i></small>
 </p>
 </div>
 
