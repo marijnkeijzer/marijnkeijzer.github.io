@@ -11,7 +11,7 @@
 
 
 
-<title> Code</title>
+<title>Code</title>
 
 <script src="site_libs/header-attrs-2.20/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
@@ -249,6 +249,9 @@ $(document).ready(function () {
   <a href="about.html">CV</a>
 </li>
 <li>
+  <a href="research.html">Research</a>
+</li>
+<li>
   <a href="sciout.html">Output</a>
 </li>
 <li>
@@ -289,19 +292,31 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore"><br>Code</h1>
+<h1 class="title toc-ignore">Code</h1>
 
 </div>
 
 
-<p><br></p>
-<div
-style="border:1px; border-style:solid; border-color:#e1e1e1; padding:1em;">
+<style>
+.codeblock {
+  background-color: #fafafa;
+  border: 1px solid #3a3b3c;
+  border-radius: 5px;
+}
+.grid-item {
+  width: auto;
+  max-width: 850px;
+}
+</style>
+<div class="grid-container">
+
+<!----------------------------------------------------------------------------->
+<div class="grid-item" topic="intro_abm">
+<a href src="abm101"><img src="img/scurve.svg" alt="docu" style="height:190px;margin: 0px 0px 0px 20px;" align="right"></img></a>
 <h3>
 Introduction to Agent Based Modeling
 </h3>
-<p><a href src="abm101"><img src="img/scurve.svg" alt="docu" style="height:190px;margin: 0px 0px 0px 20px;" align="right"></img></a>
-Together with Michael Mäs (for UG-BSS in 2019) and Jan Lorenz (for
+<p>Together with Michael Mäs (for UG-BSS in 2019) and Jan Lorenz (for
 BIGSSS-CSS in 2023), I deveoped two short ABM workshops (one ~3 hours
 and another ~1.5 hours) in which we introduce Agent Based Modeling as a
 tool for theory building to social scientists. We focus on the
@@ -314,9 +329,8 @@ research.</p>
 workshop (with Jan Lorenz) here</a></li>
 </ul>
 </div>
-<p><br></p>
-<div
-style="border:1px; border-style:solid; border-color:#e1e1e1; padding:1em;">
+<!----------------------------------------------------------------------------->
+<div class="grid-item" topic="homo_bot">
 <a href src="https://github.com/marijnkeijzer/botsComputationalSociology"><img src="img/bot-homophily.png" alt="bots" style="height:192px;margin: 0px 20px 0px 0px;" align="left"></img></a>
 <h3>
 Homophily and Bot Effectiveness
@@ -330,9 +344,8 @@ code on my github page.</p>
 <p>[<a href="https://github.com/marijnkeijzer/botsComputationalSociology" target="_blank">code</a>]
 [<a href="" target="_blank">paper</a>]</p>
 </div>
-<p><br></p>
-<div
-style="border:1px; border-style:solid; border-color:#e1e1e1; padding:1em;">
+<!----------------------------------------------------------------------------->
+<div class="grid-item" topic="sowb">
 <a href src="https://github.com/marijnkeijzer/weakbots"><img src="img/bots.png" alt="bots" style="height:162px;margin: 0px 0px 0px 20px;" align="right"></img></a>
 <h3>
 Strength of Weak Bots
@@ -345,36 +358,59 @@ are less, not more, connected and active.</p>
 <p>[<a href="https://github.com/marijnkeijzer/weakbots" target="_blank">code</a>]
 [<a href="https://doi.org/10.1016/j.osnem.2020.100106" target="_blank">paper</a>]</p>
 </div>
-<p><br></p>
-<div
-style="border:1px; border-style:solid; border-color:#e1e1e1; padding:1em;">
+<!----------------------------------------------------------------------------->
+<div class="grid-item" topic="defSim">
 <a href src="https://github.com/defSim/defSim"><img src="https://defSim.github.io/defSim/_static/defSim-logo.png" alt="defSim" style="height:190px;margin: 0px 40px 0px 0px;" align="left"></img></a>
 <h3>
 defSim
 </h3>
-<h4>
-<em>discrete event framework for social influence models</em>
-</h4>
+<p>
+defSim–the discrete event framework for social influence models–is a
+python package that aims to be the modular standard for social influence
+models. With defSim you can run a single Simulation, execute a larger
+Simulation Experiment, or use any number of pre-programmed modules for
+your own idea or variation of a traditional social influence model.
+Using defSim is meant to save you time on programming functions that you
+will need in any social influence research project,
+<p>
+<span class="dots"></span>
+</p>
+</p>
+<span class="more">
+<p>
+but furthermore you make sure that your model remains strictly
+comparable (‘aligned’) with traditional models, and other models in the
+defSim-realm, while working completely open source by default.
+</p>
+<p>
 <ul>
 <li><a href="https://github.com/defSim/defSim">defSim on GitHub</a></li>
 <li><a href="https://defSim.github.io/defSim/">Documentation</a></li>
 <li><a href="https://defSim.github.io/defSim/Introduction_to_defSim.html">Quick
-start guide</a></li>
+start guide</a>
+</p>
+</span>
+<p>
+<button onclick="readMore(&#39;defSim&#39;)" class="myBtn">
+Read more
+</button>
+</p></li>
 </ul>
 <p><br></p>
 </div>
 <p><br></p>
-<div
-style="border:1px; border-style:solid; border-color:#e1e1e1; padding:1em;">
+<!----------------------------------------------------------------------------->
+<div class="grid-item" topic="torus">
+<a href src="https://youtu.be/qKZowIWcUic"><img src="img/torus.png" alt="docu" style="height:150px;margin: 0px 0px 0px 20px;rounded-corners:5px;border-radius:35px;" align="right"></img></a>
 <h3>
 3D torus graph in NetLogo
 </h3>
-<p><a href src="https://youtu.be/qKZowIWcUic"><img src="img/torus.png" alt="docu" style="height:150px;margin: 0px 0px 0px 20px;" align="right"></img></a>
-A while ago I created this code to visualize the commonly used <i>torus
-network</i> in three dimensions. The model uploaded here does not model
-any kind of influence function, but it is meant to show how you can
-generate a 3D representation of the torus network and use NetLogo’s
-<code>facexyz</code> function to make this presentation dynamic.</p>
+<p>A while ago I created this code to visualize the commonly used
+<i>torus network</i> in three dimensions. The model uploaded here does
+not model any kind of influence function, but it is meant to show how
+you can generate a 3D representation of the torus network and use
+NetLogo’s <code>facexyz</code> function to make this presentation
+dynamic.</p>
 <ul>
 <li><a href="http://www.marijnkeijzer.nl/code/3D_Torus.nlogo3d" download>Download
 the NetLogo model here</a></li>
@@ -382,6 +418,25 @@ the NetLogo model here</a></li>
 <a href="https://youtu.be/qKZowIWcUic" target="_blank">YouTube</a></li>
 </ul>
 </div>
+</div>
+<hr />
+<script type="text/javascript">
+function readMore(topic) {
+    let dots = document.querySelector(`.grid-item[topic="${topic}"] .dots`);
+    let moreText = document.querySelector(`.grid-item[topic="${topic}"] .more`); 
+    let btnText = document.querySelector(`.grid-item[topic="${topic}"] .myBtn`);
+
+    if (dots.style.display === "none") {
+        dots.style.display = "inline";
+        btnText.textContent = "Read more";
+        moreText.style.display = "none";
+    } else {
+        dots.style.display = "none";
+        btnText.textContent = "Read less"; 
+        moreText.style.display = "inline";
+    }
+}
+</script>
 
 
 

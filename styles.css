@@ -1,0 +1,91 @@
+.grid-container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: 0 auto;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.grid-item {
+    position: relative; /* Add position: relative to the container */
+    width: auto;
+    max-width: 420px;
+    background-color: #fafafa;
+    background-size: cover;
+    background-position: center;
+    border: 1px solid #3a3b3c;
+    border-radius: 5px;
+    text-align: left;
+    font-size: 1em;
+    padding: 10px 10px 0px 10px;
+    margin: 1%;
+    word-wrap: break-word;
+}
+
+.grid-item::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.1); /* Adjust the opacity here (0.7 for 70% opacity) */
+    border-radius: 5px;
+    z-index: -1; /* Place the pseudo-element behind the content */
+}
+
+.more{
+  display: none;
+}
+
+h-theme {
+    font-style: normal;
+    font-size: 150%;
+}
+
+details summary::-webkit-details-marker {
+  display:none;
+}
+
+
+/* Style for the details element 
+details {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px;
+}
+
+/* Style for the summary element inside details 
+summary {
+    font-weight: bold;
+    cursor: pointer;
+    position: relative;
+    padding: 0;
+}
+
+/* Style for the header image 
+summary::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('https://www.toulouse-visit.com/sites/www.toulouse-tourisme.com/files/styles/incontournable_hp/public/thumbnails/image/incontournables_0.jpg'); /* Replace with your image URL 
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+}
+
+/* Style for the open state of details 
+details[open] {
+    background-color: #f0f0f0;
+}
+
+/* Style for the content inside details 
+details p {
+    margin: 0;
+}
+*/
