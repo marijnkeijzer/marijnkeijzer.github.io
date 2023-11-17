@@ -11,7 +11,7 @@
 
 
 
-<title> Research themes &amp; projects</title>
+<title>Research themes &amp; projects</title>
 
 <script src="site_libs/header-attrs-2.20/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
@@ -246,7 +246,7 @@ $(document).ready(function () {
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>
-  <a href="about.html">CV</a>
+  <a href="about.html">About me</a>
 </li>
 <li>
   <a href="research.html">Research</a>
@@ -292,7 +292,7 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore"><br>Research themes &amp; projects</h1>
+<h1 class="title toc-ignore">Research themes &amp; projects</h1>
 
 </div>
 
@@ -306,22 +306,45 @@ $(document).ready(function () {
 <div id="current-projects" class="section level1">
 <h1>Current projects</h1>
 <div class="grid-container">
-
-<!-----------------------------------------------------------------------------
-
+<!----------------------------------------------------------------------------->
 <div class="grid-item" topic="up3">
-<img src="img/themes/climatechange.png" alt="" style="width:100%; margin: 0px 0px 0px 0px;" align="center"></img>
-
-### Unpacking the polarization-perception paradox [UP<sup>3</sup>] {#up3}
-
-<p>Despite the pervasive perception that we live in polarizing societies, there is little evidence to support growing ideological disagreement. Rather than actual disagreement, perceived polarization may be rooted in changes in identity-based affection, belief consolidation or network embeddedness.<span class="dots">...</span></p>
-<span class="more"><p>The debate around pro-environmental action is one domain where the polarization perception paradox can be particularly severe as the perceived controversiality of the topic may not reflect actual concern of a large majority, and prevent effective collective action. This project uses lab-on-the-web experiments, socio-semantic analysis of digital trace data, and computational modeling to build our scientific understanding of political polarization and contribute to a more sustainable society.</p>
-
-<p>**//** in collaboration with [Camille Roth](https://camilleroth.github.io/), [Lynda Tamine](https://www.irit.fr/~Lynda.Tamine-Lechani/) \& [Frederic Amblard](https://www.ut-capitole.fr/accueil/m-frederic-amblard) | funded by [TIRIS](https://www.univ-toulouse.fr/tiris-transitions-et-interdisciplinarite/tiris-toulouse-initiative-research-s-impact-society)</p>
+<p><img src="img/themes/climatechange.png" alt="" style="width:100%; margin: 0px 0px 0px 0px;" align="center"></img></p>
+<div id="up3" class="section level3">
+<h3>Unpacking the polarization-perception paradox [UP<sup>3</sup>]</h3>
+<p>
+Despite the pervasive perception that we live in polarizing societies,
+there is little evidence to support growing ideological disagreement.
+Rather than actual disagreement, perceived polarization may be rooted in
+changes in identity-based affection, belief consolidation or network
+embeddedness.<span class="dots">…</span>
+</p>
+<span class="more">
+<p>
+The debate around pro-environmental action is one domain where the
+polarization perception paradox can be particularly severe as the
+perceived controversiality of the topic may not reflect actual concern
+of a large majority, and prevent effective collective action. This
+project uses lab-on-the-web experiments, socio-semantic analysis of
+digital trace data, and computational modeling to build our scientific
+understanding of political polarization and contribute to a more
+sustainable society.
+</p>
+<p>
+<strong>//</strong> in collaboration with <a
+href="https://camilleroth.github.io/">Camille Roth</a>, <a
+href="https://www.irit.fr/~Lynda.Tamine-Lechani/">Lynda Tamine</a> &amp;
+<a href="https://www.ut-capitole.fr/accueil/m-frederic-amblard">Frederic
+Amblard</a> | funded by <a
+href="https://www.univ-toulouse.fr/tiris-transitions-et-interdisciplinarite/tiris-toulouse-initiative-research-s-impact-society">TIRIS</a>
+</p>
 </span>
-<p><button onclick="readMore('up3')" class="myBtn">Read more</button></p>
+<p>
+<button onclick="readMore(&#39;up3&#39;)" class="myBtn">
+Read more
+</button>
+</p>
 </div>
-
+</div>
 <!----------------------------------------------------------------------------->
 <div class="grid-item" topic="mdg">
 <p><img src="img/themes/groupsuccess.png" alt="" style="width:100%; margin: 0px 0px 0px 0px;" align="center"></img></p>
@@ -415,6 +438,8 @@ Read more
 </p>
 </div>
 </div>
+</div>
+<p><br></p>
 </div>
 <div id="interests" class="section level1">
 <h1>Research interests</h1>
@@ -521,7 +546,6 @@ Read more
 </div>
 </div>
 </div>
-<hr />
 <script type="text/javascript">
 function readMore(topic) {
     let dots = document.querySelector(`.grid-item[topic="${topic}"] .dots`);
@@ -541,6 +565,48 @@ function readMore(topic) {
 </script>
 </div>
 
+<style>
+table {
+  border-radius: 5px;
+  font-size: 0.9em;
+  background-color: #fafafa;
+}
+td {
+    padding: 10px;
+}
+</style>
+
+<br><br><br>
+
+<img src="img/line.gif" width="100%">
+
+&nbsp;
+
+<!--<hr />-->
+
+<table width=100%>
+  <tr>
+    <td>
+      Website created with <a href="https://rmarkdown.rstudio.com/lesson-13.html">R Markdown</a>
+    </td>
+    <td style="text-align:right;">
+      <i>Last updated on <span id='date'></span></i>
+    </td>
+  </tr>
+</table>
+
+<script>
+$(function() {
+  $('.main-container').after($('.footer'));
+})
+
+function myFunction() {
+  var x = document.lastModified;
+  document.getElementById("date").innerHTML = new Date(document.lastModified).toISOString().substr(0, 10);
+}
+
+myFunction()
+</script>
 
 
 

@@ -246,7 +246,7 @@ $(document).ready(function () {
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>
-  <a href="about.html">CV</a>
+  <a href="about.html">About me</a>
 </li>
 <li>
   <a href="research.html">Research</a>
@@ -494,10 +494,51 @@ Kruimels</a>’ (<em>digital breadcrumbs</em>) by Matjeu Witte →</p>
 href="https://nos.nl/op3/artikel/2149923-zo-bepalen-algoritmes-jouw-wereldbeeld.html">Zo
 bepalen algoritmes jouw wereldbeeld</a>’ (<em>This is how algorithms
 determine your world view</em>)</p>
-<hr />
 </div>
 </div>
 
+<style>
+table {
+  border-radius: 5px;
+  font-size: 0.9em;
+  background-color: #fafafa;
+}
+td {
+    padding: 10px;
+}
+</style>
+
+<br><br><br>
+
+<img src="img/line.gif" width="100%">
+
+&nbsp;
+
+<!--<hr />-->
+
+<table width=100%>
+  <tr>
+    <td>
+      Website created with <a href="https://rmarkdown.rstudio.com/lesson-13.html">R Markdown</a>
+    </td>
+    <td style="text-align:right;">
+      <i>Last updated on <span id='date'></span></i>
+    </td>
+  </tr>
+</table>
+
+<script>
+$(function() {
+  $('.main-container').after($('.footer'));
+})
+
+function myFunction() {
+  var x = document.lastModified;
+  document.getElementById("date").innerHTML = new Date(document.lastModified).toISOString().substr(0, 10);
+}
+
+myFunction()
+</script>
 
 
 
