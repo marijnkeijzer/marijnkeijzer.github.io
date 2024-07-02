@@ -1,0 +1,92 @@
+---
+title: "Online discussions study"
+output: html_document
+---
+
+---
+
+### Welcome
+
+This page is dedicated to the *online discussions* study. 
+In due course, this page will include:
+
+* links to **publications** based on the data obtained in the study
+
+In case you have any questions, please contact us via Prolific, or this email 
+address: 
+marijn.keijzer [at] iast.fr
+
+---
+
+<!--
+
+### Donation amount
+
+TBA
+
+---
+
+### Proof of payment
+
+TBA
+
+---
+
+### Publications
+
+TBA
+
+---
+
+-->
+
+### Consent form {#consent}
+
+**Use and storage of data.**
+
+Your data will be collected for a research project at the Toulouse School of Economics (TSE-Recherche) led by Dr. Marijn Keijzer.
+
+- The data are collected as part of a public service remit. The data will be used for research purposes only.
+- We will collect data on your age, gender, political opinions, and feelings towards other voters.
+- The data from the survey will only be saved if you click the submit button at the end.
+- Only the researchers in charge of the project will have access to your personal data.
+- Your data will be stored for 3 months after being collected and then anonymized.
+- The data will not be transferred outside of the EU.
+- The anonymized data will be stored on an open science database without any personal identification (Prolific IDs will not be included) and will be accessible to the rest of the scientific community (under CC0 license).
+
+**Personal rights.**
+
+Within the 3 months after you submitted the questionnaire, you have the following rights:
+
+- The right to object to the processing of your data and withdraw your consent (depending on the case)
+- The right to access and rectify your data
+- The right to erase your data
+- The right to a restricted use when your data is not necessary or no longer useful
+
+**Contact.**
+
+You may contact the researchers in charge of the project through Prolific, should you have any questions.
+
+The CNRS Data Protection Office that approved this study can be contacted for any questions about the protection of personal data.
+
+- By post: CNRS Data Protection Department, 2 rue Jean Zay, 54519 Vandoeuvre-lès-Nancy, France.
+- By email: dpd.demandes@cnrs.fr.
+
+After contacting us, if you feel that your rights regarding data processing, data storage and individual freedom have not been respected, you can lodge a complaint with the CNIL by post or email.
+
+---
+
+<p align="right" style="font-size:0.9em"><i>Website was last updated on <span id='date'></span></i></p>
+
+<script>
+$(function() {
+  $('.main-container').after($('.footer'));
+})
+
+function myFunction() {
+  var x = document.lastModified;
+  document.getElementById("date").innerHTML = new Date(document.lastModified).toISOString().substr(0, 10);
+}
+
+myFunction()
+</script>
